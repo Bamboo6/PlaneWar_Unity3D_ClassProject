@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [AddComponentMenu("MyGame/Player")]
 public class Player : MonoBehaviour {
@@ -8,11 +9,12 @@ public class Player : MonoBehaviour {
     
 
     public Transform m_rocket;
-    public float m_life = 3;
+    public float m_life = 3;//生命值
     public GameObject boom;
     public AudioClip audioClip;
     public GameObject again;
     public GameObject quit;
+    public Text leftText;
     
 
     private AudioSource audioSource;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour {
     void Start ()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        leftText.text = "生命：" + m_life.ToString();
     }
 	
 	void Update () {
@@ -72,7 +75,12 @@ public class Player : MonoBehaviour {
     {
         if (other.gameObject.tag != "PlayerRocket")
         {
-            PlayerDie();
+            m_life--;
+            leftText.text = "生命：" + m_life.ToString();
+            if (m_life <= 0)
+            {
+                PlayerDie();
+            }
             GameManager.Instance.GameOver();
         }
     }

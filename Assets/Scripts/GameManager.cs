@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour {
 
     private Text scoreText;
     private Text besetScoreText;
+    //private Text HPText;
     private int score = 0;
     private int bestScore = 0;
+    private int HP = 3;
 
 
 
@@ -33,14 +35,15 @@ public class GameManager : MonoBehaviour {
 	{
 	    scoreText = GameObject.Find("Score").GetComponent<Text>();
 	    besetScoreText = GameObject.Find("BestScore").GetComponent<Text>();
-	    bestScore = PlayerPrefs.GetInt("best", 0);
-        besetScoreText.text = "最高记录: " + bestScore.ToString()+ " 分";
+        //HPText = GameObject.Find("HP").GetComponent<Text>();
+        bestScore = PlayerPrefs.GetInt("best", 0);
+        besetScoreText.text = "最高：" + bestScore.ToString()+ " 分";
     }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    scoreText.text = "当前得分: " + score.ToString() + " 分";
+	    scoreText.text = "当前：" + score.ToString() + " 分";
 
         if (Input.GetKey(KeyCode.Escape))
 	    {
