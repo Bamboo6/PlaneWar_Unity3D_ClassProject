@@ -437,7 +437,6 @@ GameObject:
   - component: {fileID: 376644359}
   - component: {fileID: 376644363}
   - component: {fileID: 376644362}
-  - component: {fileID: 376644361}
   - component: {fileID: 376644360}
   m_Layer: 0
   m_Name: Spawner (1)
@@ -472,38 +471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy1: {fileID: 1064226781547482, guid: b82ac02da1f51624ea315fb636745560, type: 2}
   enemy2: {fileID: 1706192267603070, guid: 6972bbc2f4beeb34da0d69a825ce5e87, type: 2}
---- !u!23 &376644361
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 376644358}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  rocketProp: {fileID: 1504600747613938, guid: 965c0acc33c677f40b22252ad6ef4b37, type: 2}
+  hpAdd: {fileID: 1285093743605546, guid: 0f7f57ad3ce29804d954256670f5b52b, type: 2}
 --- !u!135 &376644362
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1045,7 +1014,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4999917302544286, guid: 1bae3f4e33225d048afbc298b8cf005c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 4999917302544286, guid: 1bae3f4e33225d048afbc298b8cf005c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1767,7 +1736,6 @@ GameObject:
   - component: {fileID: 1791930414}
   - component: {fileID: 1791930413}
   - component: {fileID: 1791930412}
-  - component: {fileID: 1791930411}
   - component: {fileID: 1791930410}
   m_Layer: 0
   m_Name: Spawner
@@ -1789,38 +1757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy1: {fileID: 1064226781547482, guid: b82ac02da1f51624ea315fb636745560, type: 2}
   enemy2: {fileID: 1706192267603070, guid: 6972bbc2f4beeb34da0d69a825ce5e87, type: 2}
---- !u!23 &1791930411
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1791930409}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  rocketProp: {fileID: 1504600747613938, guid: 965c0acc33c677f40b22252ad6ef4b37, type: 2}
+  hpAdd: {fileID: 1285093743605546, guid: 0f7f57ad3ce29804d954256670f5b52b, type: 2}
 --- !u!135 &1791930412
 SphereCollider:
   m_ObjectHideFlags: 0

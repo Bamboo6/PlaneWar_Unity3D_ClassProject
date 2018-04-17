@@ -22,6 +22,9 @@ public class Player : MonoBehaviour {
     private Transform m_transform;
     private float m_timer;
 
+    public bool isRocketProp = false;
+    public float rocketPropTime = 0;
+
     private void Awake()
     {
         m_transform = transform;
@@ -45,11 +48,27 @@ public class Player : MonoBehaviour {
         {
             m_transform.Translate(-(new Vector3(h, 0, v)) * m_speed * Time.deltaTime);
         }
+        if (isRocketProp)
+        {
+ rocketPropTime -= Time.deltaTime;
+         if (rocketPropTime <= 0)
+          {
+              isRocketProp = false;
+           }
+        }
+       
 
         //鼠标控制子弹发射
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(m_rocket,transform.position,transform.rotation);
+            if (isRocketProp)
+            {
+                Instantiate(m_rocket, transform.position, Quaternion.Euler(0,225,0));
+                Instantiate(m_rocket, transform.position, Quaternion.Euler(0, 135, 0));
+                
+
+            }
             audioSource.PlayOneShot(audioClip);
 
         }
@@ -60,9 +79,19 @@ public class Player : MonoBehaviour {
             if (Input.GetKey(KeyCode.Space))
             {
                 Instantiate(m_rocket, transform.position, transform.rotation);
+                if (isRocketProp)
+                {
+                    Instantiate(m_rocket, transform.position, Quaternion.Euler(0, 200, 0));
+                    Instantiate(m_rocket, transform.position, Quaternion.Euler(0, 160, 0));
+
+
+                }
                 audioSource.PlayOneShot(audioClip);
             }
+
         }
+
+        
 
         if (m_life <= 0)
         {
@@ -73,7 +102,7 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "PlayerRocket")
+        if (other.gameObject.tag != "PlayerRocket"&&other.gameObject.tag!="RocketProp" && other.gameObject.tag != "HPAdd")
         {
             m_life--;
             leftText.text = "生命：" + m_life.ToString();
@@ -82,6 +111,17 @@ public class Player : MonoBehaviour {
                 PlayerDie();
             }
             GameManager.Instance.GameOver();
+        }
+        if (other.gameObject.tag == "RocketProp")
+        {
+            isRocketProp = true;
+            rocketPropTime = 3;
+        }
+        if (other.gameObject.tag == "HPAdd")
+        {
+            m_life++;
+            leftText.text = "生命：" + m_life.ToString();
+
         }
     }
 
