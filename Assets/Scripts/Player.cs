@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[System.Serializable]//序列化
+public class FlyEdge//飞行边界类
+{
+    public float minX;
+    public float maxX;
+    public float minZ;
+    public float maxZ;
+}
+
 [AddComponentMenu("MyGame/Player")]
 public class Player : MonoBehaviour {
-
-    
+    public FlyEdge border;
 
     public Transform m_rocket;
     private float m_life = 10;//生命值
@@ -30,7 +39,6 @@ public class Player : MonoBehaviour {
 
     private Rocket rocketpower;
 
-
     private void Awake()
     {
         m_transform = transform;
@@ -50,6 +58,8 @@ public class Player : MonoBehaviour {
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+        //边界值获取与限定
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x,border.minX,border.maxX),0,Mathf.Clamp(this.transform.position.z, border.minZ, border.maxZ));
 
         //飞机移动
         if(h != 0 || v != 0)

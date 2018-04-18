@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733672158112848}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -220,9 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ed1ab94f0d5c449c08b749bb6db65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  border:
+    minX: -8.22
+    maxX: 8.22
+    minZ: -8.22
+    maxZ: 8.22
   m_rocket: {fileID: 4208710195162514, guid: 630d9098102447e4f970a9b70f769cf9, type: 2}
-  m_life: 3
   boom: {fileID: 100000, guid: fd0604056527c68458f893a5f9dc89e6, type: 2}
   audioClip: {fileID: 8300000, guid: 44ee0a0b2a99156438f0b733f8c877a3, type: 3}
   again: {fileID: 0}
   quit: {fileID: 0}
+  leftText: {fileID: 0}
+  isRocketProp: 0
+  rocketPropTime: 0
+  isPowerProp: 0
+  powerPropTime: 0
