@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
-    public  float m_power = 2;
+    public int m_power = 2;
+
     public float rocketSpeed = 10;
     private Transform m_transform;
 
@@ -13,6 +14,10 @@ public class Rocket : MonoBehaviour {
     {
         m_transform = transform;
     }
+    public void SetPower(int a)
+    {
+        m_power = a;
+    }
     void Start () {
         Destroy(gameObject, 5f);
 	}
@@ -20,7 +25,8 @@ public class Rocket : MonoBehaviour {
 	void Update () {
         //子弹飞行
         m_transform.Translate(-Vector3.forward * rocketSpeed * Time.deltaTime);
-	}
+        
+    }
 
     void OnTriggerEnter(Collider other)
     {

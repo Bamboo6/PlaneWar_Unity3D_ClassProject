@@ -10,6 +10,7 @@ TagManager:
   - Bound
   - RocketProp
   - HPAdd
+  - PowerProp
   layers:
   - Default
   - TransparentFX

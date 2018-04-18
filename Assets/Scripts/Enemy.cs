@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
 
-    public float m_life = 10;
+    public float m_life = 1;
     //速度
     public float m_speed = 1;
     public GameObject boom;
+
+    public Rocket rocket;
 
     //旋转速度
     protected float m_rotSpeed = 45;

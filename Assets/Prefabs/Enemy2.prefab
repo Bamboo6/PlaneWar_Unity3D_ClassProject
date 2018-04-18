@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33899671723073032}
   - component: {fileID: 23036347491205252}
   - component: {fileID: 95253171766582562}
+  - component: {fileID: 114154032465348934}
   - component: {fileID: 54911782447517096}
   - component: {fileID: 64083953571990972}
-  - component: {fileID: 114154032465348934}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9c61e40b011e54fa9a9d9cf38a10dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_life: 10
+  m_life: 20
   m_speed: 1
   boom: {fileID: 100000, guid: fd0604056527c68458f893a5f9dc89e6, type: 2}
+  rocket: {fileID: 0}
   m_rocket: {fileID: 4397875598382440, guid: ccc9ff55b527a5d47b08b87eb454e785, type: 2}

@@ -7,9 +7,11 @@ public class Spawner : MonoBehaviour {
     public GameObject enemy2;
     public GameObject rocketProp;
     public GameObject hpAdd;
+    public GameObject powerProp;
     private float timer ;
     private float rocketPropTime = 5;
     private float hpAddPropTime = 10;
+    private float powerAddPropTime = 8;
     private void Start()
     {
         timer = Random.Range(0, 3);
@@ -21,7 +23,6 @@ public class Spawner : MonoBehaviour {
     void Update () {
         EnemyBorn();
         PropBorn();
-            
 	}
 
     private void EnemyBorn()
@@ -51,7 +52,7 @@ public class Spawner : MonoBehaviour {
         if (rocketPropTime <= 0)
         {
             float posX = Random.Range(-8, 8);
-            float posZ = Random.Range(-8, 8);
+            float posZ = Random.Range(-8, 0);
             transform.position = new Vector3(posX, 0, posZ);
             rocketPropTime = Random.Range(5, 10);
             Instantiate(rocketProp, transform.position, rocketProp.transform.rotation);
@@ -61,10 +62,20 @@ public class Spawner : MonoBehaviour {
         if (hpAddPropTime <= 0)
         {
             float posX = Random.Range(-8, 8);
-            float posZ = Random.Range(-8, 8);
+            float posZ = Random.Range(-8, 0);
             transform.position = new Vector3(posX, 0, posZ);
-            hpAddPropTime = Random.Range(8, 10);
+            hpAddPropTime = Random.Range(10, 20);
             Instantiate(hpAdd, transform.position, hpAdd.transform.rotation);
+        }
+
+        powerAddPropTime -= Time.deltaTime;
+        if (powerAddPropTime <= 0)
+        {
+            float posX = Random.Range(-8, 8);
+            float posZ = Random.Range(-8, 0);
+            transform.position = new Vector3(posX, 0, posZ);
+            powerAddPropTime = Random.Range(7, 10);
+            Instantiate(powerProp, transform.position, powerProp.transform.rotation);
         }
     }
 }
